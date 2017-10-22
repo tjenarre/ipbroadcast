@@ -1,0 +1,25 @@
+{
+  "name": "ipbroadcast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "standard && node index.js",
+    "dev": "node --inspect-brk index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "firebase-admin": "5.2.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-run": "^0.8.0",
+    "load-grunt-tasks": "^3.5.2",
+    "nodemailer": "^4.2.0",
+    "nodemon": "^1.12.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {}
+}
