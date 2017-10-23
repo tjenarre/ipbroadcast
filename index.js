@@ -2,6 +2,7 @@
 var admin = require('firebase-admin')
 var https = require('https')
 var nodemailer = require('nodemailer')
+var config = require('./config/config.json')
 var serviceAccount = require('./config/credentials.json')
 var smtpConfig = require('./config/smtpConfig.json')
 
@@ -10,8 +11,8 @@ function sendEmail (ip) {
   let transporter = nodemailer.createTransport(smtpConfig)
 
   var mailOptions = {
-    from: 'node@emamian.se',
-    to: 'nariman@emamian.se',
+    from: config.mailFrom,
+    to: config.mailTo,
     subject: 'IP Update required!',
     text: 'The new ip should be: ' + ip
   }
@@ -44,7 +45,7 @@ req.end()
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://ipbroadcast-7667b.firebaseio.com/'
+  databaseURL: config.databaseURL
 })
 
 
